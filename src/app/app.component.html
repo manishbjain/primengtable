@@ -16,7 +16,7 @@
         <ng-template pTemplate="header" let-columns>
                 <!-- <ng-template pTemplate="header" let-columns *ngIf="roleCheck"> -->
             <tr>
-                <th *ngFor="let col of columns | visibility === 1" [pSortableColumn]="col.field">
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
                    {{col.header}}
                     <p-sortIcon [field]="col.field"></p-sortIcon>
                 </th>
@@ -33,7 +33,7 @@
 
         <!-- Table Body -->
 
-        <ng-template pTemplate="body" let-user let-columns="columns" *ngIf="roleCheck">
+        <ng-template pTemplate="body" let-user let-columns="columns">
             <tr>
                 <td *ngFor="let col of columns" >
                     {{user[col.field]}}
